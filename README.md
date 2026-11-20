@@ -1,64 +1,50 @@
-# UltraRig for the M-VAVE Tank-G v1 and v2
+# UltraRig สำหรับ M-VAVE Tank-G v1 และ v2
 
-UltraRig is an alternative firmware for the **M-VAVE Tank-G v1 and v2** guitar multi-effects pedals: NAM (Neural Amp Modeler) A2-Lite
-amp captures, an editable effects chain with parallel branches, cabinet IRs, 32 presets with 4 scenes each, a tuner, and a control page
-that runs in your browser, plus an optional Android app over Bluetooth. Out of the box the footswitches work like the factory firmware
-(8 banks of 4 presets, a Live mode for the effects and the knobs), or you can give each one your own actions.
+UltraRig คือเฟิร์มแวร์ทางเลือกสำหรับเอฟเฟกต์กีตาร์ **M-VAVE Tank-G v1 และ v2**: รองรับการจำลองแอมป์ NAM (Neural Amp Modeler) A2-Lite, เชนเอฟเฟกต์ที่ปรับแต่งได้พร้อมการแยกสายแบบขนาน (parallel branches), Cabinet IRs, 32 พรีเซ็ต โดยแต่ละพรีเซ็ตมี 4 ซีน, จูนเนอร์, และหน้าเว็บควบคุมที่ทำงานบนเบราว์เซอร์ รวมถึงแอป Android (ทางเลือกเสริม) ผ่าน Bluetooth โดยค่าเริ่มต้นฟุตสวิตช์จะทำงานเหมือนเฟิร์มแวร์โรงงาน (8 แบงก์ แบงก์ละ 4 พรีเซ็ต และโหมด Live สำหรับเปิด-ปิดเอฟเฟกต์และปุ่มหมุน) หรือคุณสามารถกำหนดการทำงานของแต่ละปุ่มเองได้
 
-> **Status: public alpha.** Expect bugs. It works well, but it keeps changing: I build it on my own and the community helps me by testing it, so you use it at your own risk, at home or on stage. Keep the backup the installer makes.
-> UltraRig is **not affiliated with or endorsed by M-VAVE / Cuvave / Sinco or JieLi**. "M-VAVE" and "Tank-G" are trademarks of their owners
-> and are used here only to name the compatible hardware.
+> **สถานะ: Public Alpha** อาจมีบั๊กเกิดขึ้นได้ ระบบทำงานได้ดีแต่ยังมีการเปลี่ยนแปลงอยู่ตลอด: ผมพัฒนาโปรเจกต์นี้คนเดียวโดยมีชุมชนช่วยกันทดสอบ ดังนั้นการใช้งานไม่ว่าจะที่บ้านหรือบนเวทีถือเป็นความรับผิดชอบของผู้ใช้งานเอง โปรดเก็บไฟล์สำรอง (backup) ที่ตัวติดตั้งสร้างไว้ให้ดี
+> UltraRig **ไม่มีส่วนเกี่ยวข้องหรือได้รับการรับรองจาก M-VAVE / Cuvave / Sinco หรือ JieLi** "M-VAVE" และ "Tank-G" เป็นเครื่องหมายการค้าของเจ้าของสิทธิ์ และถูกกล่าวถึงในที่นี้เพื่อระบุฮาร์ดแวร์ที่รองรับเท่านั้น
 
-**Website and release news:** [ultrarig.app](https://ultrarig.app). Leave your email there to get a note when a new version is out.
+**เว็บไซต์และข่าวสารการอัปเดต:** [ultrarig.app](https://ultrarig.app) สามารถลงชื่ออีเมลไว้ที่หน้าเว็บเพื่อรับแจ้งเตือนเมื่อมีเวอร์ชันใหม่ออก
 
-## Download
+## ดาวน์โหลด
 
-Every version is in [Releases](../../releases/latest). Pick the file for your pedal:
+ทุกเวอร์ชันอยู่ที่หน้า [Releases](../../releases/latest) เลือกไฟล์ให้ตรงกับรุ่นของคุณ:
 
-| File | For |
+| ไฟล์ | สำหรับ |
 |---|---|
-| `UltraRig-<version>-v2-win.zip` | Tank-G **v2**: the installer and the control page, for Windows |
-| `UltraRig-<version>-v1-win.zip` | Tank-G **v1**: the same, for the v1 |
-| `UltraRig-<version>-android.apk` | Optional: the Android app |
+| `UltraRig-<version>-v2-win.zip` | Tank-G **v2**: ตัวติดตั้งและหน้าเว็บควบคุม สำหรับ Windows |
+| `UltraRig-<version>-v1-win.zip` | Tank-G **v1**: แบบเดียวกัน สำหรับรุ่น v1 |
+| `UltraRig-<version>-android.apk` | ทางเลือกเสริม: แอปพลิเคชัน Android |
 
-Not sure which one you have? The installer tells you, and it refuses a package made for the other board.
+ไม่แน่ใจว่าเครื่องของคุณเป็นรุ่นไหน? ตัวติดตั้งจะตรวจสอบและแจ้งให้คุณทราบ และจะปฏิเสธการติดตั้งหากเลือกแพ็กเกจผิดบอร์ด
 
-## Before you install
+## ก่อนทำการติดตั้ง
 
-- **Factory firmware 97 or 98.** On 96, 53 or older, update first with M-VAVE's M-UPGRADE from [m-vave.com/download](https://m-vave.com/download)
-  (it installs 98). That update puts the factory presets, amps and cabs back, so save your own with M-EFCS first. Newer than 98 is not
-  tested, and rebrands (Lekato, Playwell, Yuimer, NMD) haven't been tested either.
-- Windows 10 or 11 to install, Chrome or Edge for the control page, and a USB **data** cable plugged straight into the computer (no hub).
-- The installer checks your pedal before writing anything and, if it isn't supported, stops without changing anything.
+- **เฟิร์มแวร์โรงงานต้องเป็นเวอร์ชัน 97 หรือ 98** หากเป็นเวอร์ชัน 96, 53 หรือเก่ากว่า ให้อัปเดตก่อนด้วยโปรแกรม M-UPGRADE ของ M-VAVE จาก [m-vave.com/download](https://m-vave.com/download) (ซึ่งจะติดตั้งเวอร์ชัน 98) การอัปเดตดังกล่าวจะรีเซ็ตพรีเซ็ต แอมป์ และแค็บจากโรงงานกลับมาทั้งหมด ดังนั้นควรสำรองข้อมูลของคุณด้วย M-EFCS ก่อน สำหรับเวอร์ชันที่ใหม่กว่า 98 และรุ่นรีแบรนด์ (Lekato, Playwell, Yuimer, NMD) ยังไม่ได้รับการทดสอบ
+- ต้องใช้ Windows 10 หรือ 11 สำหรับการติดตั้ง, Chrome หรือ Edge สำหรับหน้าเว็บควบคุม, และสาย USB **data** ที่เสียบเข้ากับคอมพิวเตอร์โดยตรง (ไม่ผ่าน USB hub)
+- ตัวติดตั้งจะตรวจสอบเอฟเฟกต์ของคุณก่อนเขียนข้อมูลใดๆ และหากไม่รองรับ ระบบจะหยุดทำงานโดยไม่มีการเปลี่ยนแปลงข้อมูล
 
-## Install
+## วิธีการติดตั้ง
 
-1. Unzip the package for your pedal and read `README.txt` inside. Keep all its files together.
-2. Connect the pedal, switch it on, close M-EFCS and M-UPGRADE, and unplug other USB MIDI or audio devices.
-3. Run `UltraRig-Installer.exe` (on the v1, as administrator) and click "Install UltraRig". If Windows asks to format a disk, click
-   **Cancel**: that disk is the pedal.
-4. It backs up the whole pedal first, then writes UltraRig and restarts the pedal. Don't unplug or switch off the pedal until the window
-   says it's installed.
-5. Open `web\index.html` from the package in Chrome or Edge and click "Connect", or use the Android app.
+1. แตกไฟล์แพ็กเกจสำหรับรุ่นของคุณและอ่านไฟล์ `README.txt` ที่อยู่ข้างใน เก็บไฟล์ทั้งหมดไว้ด้วยกัน
+2. เชื่อมต่อเอฟเฟกต์ เปิดสวิตช์เครื่อง ปิดโปรแกรม M-EFCS และ M-UPGRADE และถอดอุปกรณ์ USB MIDI หรืออุปกรณ์เสียงอื่นๆ ออกก่อน
+3. เปิดโปรแกรม `UltraRig-Installer.exe` (สำหรับรุ่น v1 ให้เปิดแบบ Run as administrator) แล้วคลิก "Install UltraRig" หาก Windows ถามให้ฟอร์แมตดิสก์ ให้กด **Cancel** (ยกเลิก): ดิสก์นั้นคือตัวเอฟเฟกต์ของคุณ
+4. โปรแกรมจะสำรองข้อมูลทั้งหมดของเอฟเฟกต์ก่อน จากนั้นจึงเขียน UltraRig ลงไปและรีสตาร์ทเครื่อง ห้ามถอดสายหรือปิดสวิตช์เอฟเฟกต์จนกว่าหน้าต่างโปรแกรมจะแจ้งว่าติดตั้งเสร็จสมบูรณ์
+5. เปิดไฟล์ `web\index.html` จากในแพ็กเกจด้วย Chrome หรือ Edge แล้วคลิก "Connect" หรือใช้งานผ่านแอป Android
 
-Updating from an older UltraRig is the same installer: click "Update UltraRig". Your presets, captures and IRs are kept.
+การอัปเดตจาก UltraRig เวอร์ชันเก่าให้ใช้ตัวติดตั้งเดียวกัน: คลิก "Update UltraRig" พรีเซ็ต, capture และ IRs ของคุณจะยังคงอยู่ครบ
 
-**Your backup** is in `Documents\tankg_installer\backup_<date>`. It is the only way back to the factory firmware (installer: "Go back to
-the factory firmware"). Copy it somewhere safe and **never share it**: it holds data unique to your unit. Error reports never include it.
+**ไฟล์สำรองข้อมูลของคุณ (Backup)** จะถูกเก็บไว้ที่ `Documents\tankg_installer\backup_<date>` ซึ่งเป็นวิธีเดียวที่จะใช้ย้อนกลับไปใช้เฟิร์มแวร์โรงงานได้ (ในตัวติดตั้งเลือก "Go back to the factory firmware") ให้คัดลอกไฟล์นี้เก็บไว้ในที่ปลอดภัยและ **ห้ามแชร์ให้ผู้อื่นเด็ดขาด**: ไฟล์นี้มีข้อมูลเฉพาะตัวของเครื่องคุณอยู่ รายงานข้อผิดพลาด (Error reports) จะไม่มีการแนบไฟล์นี้ไปด้วย
 
-## Pedal check (optional)
+## ตรวจสอบความเข้ากันได้ของเครื่อง (ทางเลือกเสริม)
 
-Want to know first whether your pedal is supported? The [UltraRig Check](../../releases/tag/check1) only reads the pedal and never writes
-anything. Unzip it, read `README-CHECK.txt`, run `UltraRig-Check.exe` and, if you like, send the report file through a
-[Check report issue](../../issues/new?template=check-report.yml).
+ต้องการเช็กก่อนว่าเครื่องของคุณรองรับหรือไม่? โปรแกรม [UltraRig Check](../../releases/tag/check1) จะอ่านข้อมูลจากเครื่องเพียงอย่างเดียวโดยไม่มีการเขียนทับใดๆ แตกไฟล์ อ่าน `README-CHECK.txt` แล้วรัน `UltraRig-Check.exe` จากนั้นหากต้องการ สามารถส่งไฟล์รายงานผ่านทาง [Check report issue](../../issues/new?template=check-report.yml) ได้
 
-## Bugs and ideas
+## แจ้งบั๊กและเสนอไอเดีย
 
-Use "Send report to the developer…" on the control page, or [open an issue](../../issues) with the output of "Copy diagnostics".
-Pedal requests are welcome too.
+ใช้เมนู "Send report to the developer…" ในหน้าเว็บควบคุม หรือ [เปิด Issue](../../issues) พร้อมแนบผลลัพธ์จากปุ่ม "Copy diagnostics" สามารถเสนอให้รองรับเอฟเฟกต์รุ่นอื่นเพิ่มเติมได้เช่นกัน
 
-## License
+## สัญญาอนุญาต (License)
 
-UltraRig is free for **personal, non-commercial use** under the [PolyForm Noncommercial License 1.0.0](LICENSE.md): you may not sell the
-firmware or pedals with it installed. It comes **with no warranty of any kind**; installing a non-official firmware may void your warranty.
-Third-party components keep their own licenses: see [NOTICE.md](NOTICE.md). The source code is not published at this time.
+UltraRig ใช้งานได้ฟรีสำหรับ **การใช้งานส่วนตัวที่ไม่ใช่เชิงพาณิชย์** ภายใต้สัญญาอนุญาต [PolyForm Noncommercial License 1.0.0](LICENSE.md): คุณไม่ได้รับอนุญาตให้นำเฟิร์มแวร์ไปขาย หรือขายเอฟเฟกต์ที่ติดตั้งเฟิร์มแวร์นี้ เฟิร์มแวร์นี้เผยแพร่ **โดยไม่มีการรับประกันใดๆ ทั้งสิ้น** การติดตั้งเฟิร์มแวร์ที่ไม่ใช่ของทางการอาจทำให้การรับประกันสินค้าสิ้นสุดลง ส่วนประกอบจากบุคคลที่สามยังคงใช้สัญญาอนุญาตของตนเอง: ดูรายละเอียดที่ [NOTICE.md](NOTICE.md) ซอร์สโค้ดยังไม่เปิดเผยเป็นสาธารณะในขณะนี้
